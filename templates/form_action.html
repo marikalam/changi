@@ -10,26 +10,26 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
         <script type="text/javascript">
-                  function getFlightInfo() { 
-                    var settings = {
-                          "async": true,
-                          "crossDomain": true,
-                          "url": "https://flifo-qa.api.aero/flifo/v3/flight/SIN/UA/896/d",
-                          "method": "GET",
-                          "headers": {
-                            "x-apikey": "2cfd0827f82ceaccae7882938b4b1627",
-                            "cache-control": "no-cache",
-                            "postman-token": "d345eb2b-a556-b114-af2e-af1e5c3b599e"
-                          }
-                        }
-
-                        $.ajax(settings).done(function (response) {
-                          console.log(response);
-                          document.getElementById("airportCode").innerHTML = response["airportCode"];
-                          document.getElementById("status").innerHTML = response["flightRecord"][0];
-                          document.getElementById("gate").innerHTML = response["flightRecord"][0];
-                        });
+          function getFlightInfo() { 
+            var settings = {
+                  "async": true,
+                  "crossDomain": true,
+                  "url": "https://flifo-qa.api.aero/flifo/v3/flight/SIN/UA/896/d",
+                  "method": "GET",
+                  "headers": {
+                    "x-apikey": "2cfd0827f82ceaccae7882938b4b1627",
+                    "cache-control": "no-cache",
+                    "postman-token": "d345eb2b-a556-b114-af2e-af1e5c3b599e"
                   }
+                }
+
+                $.ajax(settings).done(function (response) {
+                  console.log(response);
+                  document.getElementById("airportCode").innerHTML = response["airportCode"];
+                  document.getElementById("status").innerHTML = response["flightRecord"][0];
+                  document.getElementById("gate").innerHTML = response["flightRecord"][0];
+                });
+          }
             </script>
             </head>
             <body>
@@ -41,7 +41,7 @@
                 <div id="content" class="content-body">
                     Welcome <strong>{{name}}</strong>!
                     <strong>{{flightcode}}</strong> of  <br>
-                    <strong>{{airline}}</strong> leaves<br>
+                    <strong>Singapore Airlines</strong> leaves<br>
                     from Gate <strong><p id="gate"></p>.</strong><br> 
                 
                      <button onclick="getFlightInfo()">Get Flight Info</button>
@@ -49,9 +49,9 @@
 
 
                     We estimate you will need<br>
-                    <strong>{{checkinTime}}</strong> to get checked in.<br>
+              <!--       <strong>{{checkinTime}}</strong> to get checked in.<br>
                     <strong>{{immigrationTime}}</strong> to get through immigration.
-                    <strong>{{securityTime}}</strong> to get through security.
+                    <strong>{{securityTime}}</strong> to get through security. -->
                     to get to Gate <p id="gate"></p>.
 
                     <!-- <strong>(2 HOURS, 15 MINUTES)</strong><br> -->

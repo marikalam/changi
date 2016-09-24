@@ -20,10 +20,9 @@ def hello():
     email=request.form['youremail']
 
     flightcode=request.form['yourflightcode']
-    airline=request.form['yourairline']
     flightnumber=request.form['yourflightnumber']
 
-    return render_template('form_action.html', name=name, email=email, flightcode=flightcode, airline=airline, flightnumber=flightnumber)
+    return render_template('form_action.html', name=name, email=email, flightcode=flightcode, flightnumber=flightnumber)
 
 @app.route('/checkbox/', methods=['GET'])
 def checkbox():
