@@ -1,0 +1,30 @@
+{
+  "name": "sol-site",
+  "version": "1.0.0",
+  "description": "h1. Overview",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/irwinsol/sol-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/irwinsol/sol-site/issues"
+  },
+  "homepage": "https://gitlab.com/irwinsol/sol-site#README",
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "lost": "^7.0.3",
+    "scut": "^1.4.0"
+  }
+}

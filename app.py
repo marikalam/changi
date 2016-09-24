@@ -22,8 +22,14 @@ def hello():
     flightcode=request.form['yourflightcode']
     airline=request.form['yourairline']
     flightnumber=request.form['yourflightnumber']
+    singaporean=request.form['yoursingaporean']
 
-    return render_template('form_action.html', name=name, email=email, flightcode=flightcode, airline=airline, flightnumber=flightnumber)
+    return render_template('form_action.html', name=name, email=email, flightcode=flightcode, airline=airline, flightnumber=flightnumber, singaporean=singaporean)
+
+# Define a route for the default URL, which loads the form
+@app.route('/checkbox/', methods=['GET'])
+def checkbox():
+    return render_template('checkbox_action.html')
 
 @app.route('/checkbox/', methods=['GET'])
 def checkbox():
