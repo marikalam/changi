@@ -23,9 +23,8 @@
                         $.ajax(settings).done(function (response) {
                           console.log(response);
                           document.getElementById("airportCode").innerHTML = response["airportCode"];
-                          document.getElementById("status").innerHTML = response["flightrecord"]["statusText"];
-                          document.getElementById("gate").innerHTML = response["flightrecord"]["statusText"];
-
+                          document.getElementById("status").innerHTML = response["flightRecord"][0];
+                          document.getElementById("gate").innerHTML = response["flightRecord"][0];
                         });
                   }
             </script>
@@ -40,16 +39,19 @@
                     Welcome <strong>{{name}}</strong>!
                     <strong>{{flightcode}}</strong> of  <br>
                     <strong>{{airline}}</strong> leaves<br>
-                    <strong><p id="demo"></p>.</strong><br> <!-- ["flightrecord"]["gate"] -->
+                    from Gate <strong><p id="gate"></p>.</strong><br> 
                 
                      <button onclick="getFlightInfo()">Get Flight Info</button>
-                    <p id="demo"></p>
+                     
+
+
                     We estimate you will need<br>
                     <strong>{{checkinTime}}</strong> to get checked in.<br>
                     <strong>{{immigrationTime}}</strong> to get through immigration.
                     <strong>{{securityTime}}</strong> to get through security.
+                    to get to Gate <p id="gate"></p>.
 
-                    <strong>(2 HOURS, 15 MINUTES)</strong><br>
+                    <!-- <strong>(2 HOURS, 15 MINUTES)</strong><br> -->
 
 
                     <a href="/beforeBoarding">
