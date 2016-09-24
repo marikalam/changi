@@ -4,15 +4,41 @@
         <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <div id="container">
-            <div class="title">
-                <h1>Time Spender</h1>
-            </div>
-            <div id="content">
-                Hello <strong>{{name}}</strong> ({{email}})!<br>
-                Flight airline: {{airline}}<br>
-                Flight code: {{flightcode}}<br>
-                Flight number: {{flightnumber}}<br>
+
+        <div class="bottomAnim">
+
+            <div id="container">
+                <div class="title">
+                    <h1>Time Spender</h1>
+                </div>
+                <div id="content">
+                    Welcome <strong>{{name}}</strong>!
+                    <strong>{{flightcode}}</strong> of  <br>
+                    <strong>{{airline}}</strong> leaves<br>
+                    <strong>{{terminal}}</strong>in<br>
+                    <strong>(2 HOURS, 15 MINUTES)</strong><br>
+
+                    <a href="/checkbox">
+                       <button>Submit</button>
+                    </a>
+
+
+                    <script>
+                        var settings = {
+                          "async": true,
+                          "crossDomain": true,
+                          "url": "https://flifo-qa.api.aero/flifo/v3/flight/SIN/SQ/5333/a",
+                          "method": "GET",
+                          "headers": {
+                            "x-apikey": "2cfd0827f82ceaccae7882938b4b1627",
+                            "cache-control": "no-cache",
+                            "postman-token": "7e164a8e-f4f6-07a4-04cd-e40cc085133f"
+                          }
+                        $.ajax(settings).done(function (response) {
+                          console.log(response);
+                        });
+                    </script>
+                </div>
             </div>
         </div>
     </body>
