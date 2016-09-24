@@ -32,7 +32,6 @@ gulp.task('default',['serve']);
 // Default task: Watch Files For Changes & Reload browser
 gulp.task('default', ['runserver'], function () {
   browserSync.init({
-    notify: false,
     proxy: "0.0.0.0:5000"
   });
 
