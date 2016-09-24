@@ -1,5 +1,8 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Changi Confirm</title>
         <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -9,10 +12,10 @@
         <div class="bottomAnim">
 
             <div id="container">
-                <div class="title">
-                    <h1>Changi Confirm</h1>
+                <div class="title content-title">
+                    <h1>Welcome</h1>
                 </div>
-                <div id="content">
+                <div id="content" class="content-body">
                     Welcome <strong>{{name}}</strong>!
                     <strong>{{flightcode}}</strong> of  <br>
                     <strong>{{airline}}</strong> leaves<br>
