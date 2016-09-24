@@ -29,14 +29,80 @@ $gray300: #BAC6CC;
 $gray200: #E4EBEF;
 $gray100: #F0F5F7;
 
+$font-size-100: 16px;
+$font-size-200: $font-size-100*1.25;
+$font-size-300: $font-size-200*1.25;
+$font-size-400: $font-size-300*1.25;
+$font-size-500: $font-size-400*1.25;
+
 // SASS
 
 body {
     font-family: 'Lato', sans-serif;
+    font-size: 16px;
 }
 
-// Random CSS
+.content-title {
+    color: $purple400;
+}
 
+.container {
+    font-color: red;
+    form label {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    form {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    form input[type=text]{
+        border: 1px solid $gray300;
+        border-radius: 5px;
+        box-shadow: inset 0 1px 2px rgba($gray500,.1);
+        box-sizing: border-box;
+        padding: 10px;
+        height: 46px;
+        margin-bottom: 20px;
+        font-size: $font-size-100;
+        outline: 0;
+        &:active, &:focus {
+            transition: border .3s ease;
+            border: 1px solid $purple400;
+        }
+   }
+
+    form input[type=submit] {
+        height: 46px;
+        background-color: $yellow300;
+        font-size: $font-size-100;
+        font-weight: 700;
+        border-radius: 3px;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        &:hover {
+            background-color: $yellow200;
+        }
+        &:active {
+            background-color: $yellow400;
+        }
+    }
+}
+
+
+p, span {font-size: $font-size-100;}
+
+h1 {font-size: $font-size-400}
+h2 {font-size: $font-size-300}
+h3 {font-size: $font-size-200}
+h4, h5, h6 {font-size: $font-size-100}
+
+
+// Random CSS
+/**
 ::selection{ background-color: #E13300; color: white; }
 ::moz-selection{ background-color: #E13300; color: white; }
 ::webkit-selection{ background-color: #E13300; color: white; }
@@ -74,25 +140,6 @@ a {
     height: 50px;
 }
 
-h1 {
-    color: #fff;
-    margin: 0;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 50px;
-    text-transform: capitalize;
-}
-
-#content {
-    font-size:20px;
-    padding: 20px;
-    zoom: 1;
-}
-
-/*#body{
-    margin: 0 15px 0 15px;
-}*/
-
 p.footer{
     text-align: right;
     font-size: 11px;
@@ -108,14 +155,13 @@ p.footer{
     -webkit-box-shadow: 0 0 8px #D0D0D0;
 }
 
-/* Form Styles */
 form label{
     display: block;
     margin-bottom: 5px;
 }
 form input[type=text]{
-    border: 1px solid #aaa;
-    border-radius: 2px;
+    border: 1px solid $gray300;
+    border-radius: 3px;
     box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
     box-sizing: border-box;
     padding: 5px;
@@ -145,3 +191,5 @@ form input[type=submit]{
     cursor: pointer;
     text-align: center;
 }
+*/
+

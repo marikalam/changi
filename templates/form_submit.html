@@ -7,23 +7,23 @@
     <body>
         <div id="container" class="container">
             <div class="title content-title">
-                <h1>Time Spender</h1>
+                <h1>Changi Confirm</h1>
             </div>
             <div id="content" class="content-body">
                 <span>Welcome to Changi Airport! Tell us about your flight and we'll get you there on time</span>
                 <form method="post" action="{{ url_for('hello') }}">
-                  <label for="yourname">Please enter your name:</label>
+                  <label for="yourname">Name</label>
                   <input type="text" name="yourname" /><br />
-                  <label for="youremail">Please enter your email:</label>
+                  <label for="youremail">Email Address</label>
                   <input type="text" name="youremail" /><br />
 
-                  <label for="yourflightcode">Please enter your flight code:</label>
+                  <label for="yourflightcode">Flight Code</label>
                   <input type="text" name="yourflightcode" /><br />
 
-                  <label for="yourairline">Please enter your flight airline:</label>
+                  <label for="yourairline">Airline</label>
                   <input type="text" name="yourairline" /><br />
 
-                  <label for="yourflightnumber">Please enter your flight number:</label>
+                  <label for="yourflightnumber">Flight Number</label>
                   <input type="text" name="yourflightnumber" /><br />
 
                   <input type="submit" />
