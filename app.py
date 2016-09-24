@@ -29,6 +29,11 @@ def hello():
 def checkbox():
     return render_template('checkbox_action.html')
     
+
+@app.route('/beforeBoarding/', methods=['GET'])
+def beforeBoarding():
+    return render_template('before_boarding.html')
+
 # Run the app :)
 if __name__ == '__main__':
   app.run( 

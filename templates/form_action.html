@@ -3,10 +3,34 @@
         <title>Changi Confirm</title>
         <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
-    </head>
-    <body>
 
-        <div class="bottomAnim">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <script type="text/javascript">
+                  function getFlightInfo() { 
+                    var settings = {
+                          "async": true,
+                          "crossDomain": true,
+                          "url": "https://flifo-qa.api.aero/flifo/v3/flight/SIN/UA/896/d",
+                          "method": "GET",
+                          "headers": {
+                            "x-apikey": "2cfd0827f82ceaccae7882938b4b1627",
+                            "cache-control": "no-cache",
+                            "postman-token": "d345eb2b-a556-b114-af2e-af1e5c3b599e"
+                          }
+                        }
+
+                        $.ajax(settings).done(function (response) {
+                          console.log(response);
+                          document.getElementById("airportCode").innerHTML = response["airportCode"];
+                          document.getElementById("status").innerHTML = response["flightrecord"]["statusText"];
+                          document.getElementById("gate").innerHTML = response["flightrecord"]["statusText"];
+
+                        });
+                  }
+            </script>
+            </head>
+            <body>
 
             <div id="container">
                 <div class="title">
@@ -16,41 +40,23 @@
                     Welcome <strong>{{name}}</strong>!
                     <strong>{{flightcode}}</strong> of  <br>
                     <strong>{{airline}}</strong> leaves<br>
-                    <strong>{{terminal}}</strong>in<br>
+                    <strong><p id="demo"></p>.</strong><br> <!-- ["flightrecord"]["gate"] -->
+                
+                     <button onclick="getFlightInfo()">Get Flight Info</button>
+                    <p id="demo"></p>
+                    We estimate you will need<br>
+                    <strong>{{checkinTime}}</strong> to get checked in.<br>
+                    <strong>{{immigrationTime}}</strong> to get through immigration.
+                    <strong>{{securityTime}}</strong> to get through security.
+
                     <strong>(2 HOURS, 15 MINUTES)</strong><br>
 
-                    <a href="/checkbox">
-                       <button>Submit</button>
+
+                    <a href="/beforeBoarding">
+                       <button>Next</button>
                     </a>
 
-                    <br><br><br>
-                    <button onclick="myFunction()">Click me</button>
-
-
-
-                    <p id="flightInfo"></p>
-                    <script>
-                    function myFunction() {}
-                        var settings = {
-                          "async": true,
-                          "crossDomain": true,
-                          "url": "https://flifo-qa.api.aero/flifo/v3/flight/SIN/SQ/5333/a",
-                          "method": "GET",
-                          "headers": {
-                            "x-apikey": "2cfd0827f82ceaccae7882938b4b1627",
-                            "cache-control": "no-cache",
-                            "postman-token": "7e164a8e-f4f6-07a4-04cd-e40cc085133f"
-                          }
-                        $.ajax(settings).done(function (response) {
-                          console.log(response);
-
-                        });
-                                                  document.getElementById("flightInfo").innerHTML = "hi";
-
-                    }
-                    </script>
                 </div>
-            </div>
         </div>
     </body>
 </html>
