@@ -2,25 +2,14 @@
     <head>
         <title>Time Spender</title>
         <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-
-        <title>Page Title</title>
-       
     </head>
-   
-    <div class="bottomAnim">
-
-      <body>
+    <body>
         <div id="container">
             <div class="title">
-                <h1></h1>
+                <h1>Time Spender</h1>
             </div>
-
-            <div class="form-style-5">
-            <form>
-            <fieldset>
-            <legend><span class="number">1</span> About Yourself</legend>
-
-                 <form method="post" action="{{ url_for('hello') }}">
+            <div id="content">
+                <form method="post" action="{{ url_for('hello') }}">
                   <label for="yourname">Please enter your name:</label>
                   <input type="text" name="yourname" /><br />
                   <label for="youremail">Please enter your email:</label>
@@ -35,15 +24,9 @@
                   <label for="yourflightnumber">Please enter your flight number:</label>
                   <input type="text" name="yourflightnumber" /><br />
 
-                  <label for="yoursingaporean">Are you a Singporean resident or citizen - yes or no?</label>
-                  <input type="text" name="yoursingaporean" /><br />
-
                   <input type="submit" />
                 </form>
-
             </div>
-
-    </div>
+        </div>
     </body>
 </html>
- 
