@@ -1,4 +1,7 @@
 // Variables
+$white: #FFF;
+$black: #1F323A;
+
 $red500: #5A0B13;
 $red400: #920B19;
 $red300: #D13141;
@@ -18,7 +21,7 @@ $pink200: #F38DD3;
 $pink100: #F3C1E3;
 
 $yellow500: #6E4B0E;
-$yellow400: #C4810B;
+$yellow400: #B09000;
 $yellow300: #FFD200;
 $yellow200: #FFE774;
 $yellow100: #FFF3BB;
@@ -35,22 +38,43 @@ $font-size-300: $font-size-200*1.25;
 $font-size-400: $font-size-300*1.25;
 $font-size-500: $font-size-400*1.25;
 
+$screen-sm: 402px;
+$screen-md: 768px;
+$screen-lg: 960px;
+$screen-xl: 1200px;
+
 // SASS
 
 body {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
+    background: linear-gradient(135deg, $red300 0%,$purple400 100%);
+    height: 100%;
+    font-color: $black;
 }
 
 .content-title {
     color: $purple400;
 }
 
+.content-body {
+    span {
+        color: $gray400;
+    }
+}
+
 .container {
-    font-color: red;
+    background-color: $white;
+    padding: 24px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 16px 0px ($black,.12), 0px 16px 16px 0px ($black,.24);
+    lost-center: 960px;
+    margin-top: 24px;
+    margin-bottom: 24px;
     form label {
         display: block;
         font-weight: 700;
+        font-size: $font-size-100;
         margin-bottom: 8px;
     }
     form {
@@ -58,13 +82,24 @@ body {
         padding-bottom: 24px;
     }
 
-    form input[type=text]{
-        border: 1px solid $gray300;
+    input, textarea {
+      -webkit-appearance: none;
+      -webkit-border-radius: 0;
+        width: 100%;
+        display: block;
+    }
+
+    .content-body input {
         border-radius: 5px;
+    }
+
+    form input[type=text] {
+        border: 1px solid $gray300;
         box-shadow: inset 0 1px 2px rgba($gray500,.1);
         box-sizing: border-box;
         padding: 10px;
         height: 46px;
+        max-width: 100%;
         margin-bottom: 20px;
         font-size: $font-size-100;
         outline: 0;
@@ -72,124 +107,46 @@ body {
             transition: border .3s ease;
             border: 1px solid $purple400;
         }
+        @media (min-width: $screen-sm) {
+            max-width: 250px;
+        }
    }
 
-    form input[type=submit] {
-        height: 46px;
+    .yellow-button {
         background-color: $yellow300;
-        font-size: $font-size-100;
-        font-weight: 700;
-        border-radius: 3px;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
+        border-radius: 5px;
+        max-width: 250px;
+        color: $yellow500;
         &:hover {
             background-color: $yellow200;
         }
         &:active {
             background-color: $yellow400;
         }
+
+   }
+
+    form input[type=submit] {
+        height: 46px;
+        color: $black;
+        font-size: $font-size-100;
+        font-weight: 700;
+        border: none;
+        padding: 0px 22px;
+        cursor: pointer;
+        &:hover {
+            transition: background-color .2s ease;
+        }
     }
 }
 
-
-p, span {font-size: $font-size-100;}
+p, span {
+    font-size: $font-size-100;
+    line-height: 1.5;
+}
 
 h1 {font-size: $font-size-400}
 h2 {font-size: $font-size-300}
 h3 {font-size: $font-size-200}
 h4, h5, h6 {font-size: $font-size-100}
-
-
-// Random CSS
-/**
-::selection{ background-color: #E13300; color: white; }
-::moz-selection{ background-color: #E13300; color: white; }
-::webkit-selection{ background-color: #E13300; color: white; }
-
-html {
-  height: 100%;
-}
-body {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-}
-.bottomAnim {
-  border: none;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: auto;
-  background-position: bottom;
-  z-index: 1000;
-}
-
-a {
-    color: #003399;
-    background-color: transparent;
-    font-weight: normal;
-}
-
-.title {
-    padding: 0 20px;
-    background: #32373a;
-    position: relative;
-    height: 50px;
-}
-
-p.footer{
-    text-align: right;
-    font-size: 11px;
-    border-top: 1px solid #D0D0D0;
-    line-height: 32px;
-    padding: 0 10px 0 10px;
-    margin: 20px 0 0 0;
-}
-
-#container{
-    margin: 10px;
-    border: 1px solid #D0D0D0;
-    -webkit-box-shadow: 0 0 8px #D0D0D0;
-}
-
-form label{
-    display: block;
-    margin-bottom: 5px;
-}
-form input[type=text]{
-    border: 1px solid $gray300;
-    border-radius: 3px;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-    box-sizing: border-box;
-    padding: 5px;
-    margin-bottom: 20px;
-    outline: 0;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-}
-form input[type=submit]{
-    background: #198ad1;
-    color: #fff;
-    display: inline-block;
-    padding: 0 20px;
-    font-size: 16px;
-    line-height: 2.6em;
-    font-weight: 400;
-    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.1);
-    -moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,.1);
-    box-shadow: inset 0 -1px 0 rgba(0,0,0,.1);
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    text-transform: capitalize;
-    border: 0;
-    cursor: pointer;
-    text-align: center;
-}
-*/
 
