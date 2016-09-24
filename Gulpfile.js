@@ -37,5 +37,5 @@ gulp.task('default', ['runserver'], function () {
   });
 
   gulp.watch('sass/**/*.scss',['styles']);
-  gulp.watch("./*.html").on('change', browserSync.reload);
+  gulp.watch("templates/*.html").on('change', browserSync.reload);
 });

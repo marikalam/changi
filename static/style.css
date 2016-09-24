@@ -1,3 +1,6 @@
+body {
+  font-family: 'Lato', sans-serif; }
+
 ::-moz-selection {
   background-color: #E13300;
   color: white; }
@@ -29,7 +32,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #2851A6 url("https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/13239226_10154232545414048_8868543039140575608_n.jpg") left repeat-x;
   background-size: auto;
   background-position: bottom;
   z-index: 1000; }
@@ -99,7 +101,6 @@ form input[type=submit] {
   padding: 0 20px;
   font-size: 16px;
   line-height: 2.6em;
-  font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
   font-weight: 400;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   border-radius: 2px;

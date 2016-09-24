@@ -1,7 +1,39 @@
 // Variables
+$red500: #5A0B13;
+$red400: #920B19;
+$red300: #D13141;
+$red200: #E9727E;
+$red100: #FFC6CC;
 
+$purple500: #471652;
+$purple400: #6E367B;
+$purple300: #AE45C6;
+$purple200: #D398E1;
+$purple100: #E8C8EF;
 
+$pink500: #561240;
+$pink400: #A40070;
+$pink300: #E53DAF;
+$pink200: #F38DD3;
+$pink100: #F3C1E3;
 
+$yellow500: #6E4B0E;
+$yellow400: #C4810B;
+$yellow300: #FFD200;
+$yellow200: #FFE774;
+$yellow100: #FFF3BB;
+
+$gray500: #4D575B;
+$gray400: #97A1A5;
+$gray300: #BAC6CC;
+$gray200: #E4EBEF;
+$gray100: #F0F5F7;
+
+// SASS
+
+body {
+    font-family: 'Lato', sans-serif;
+}
 
 // Random CSS
 
@@ -24,7 +56,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #2851A6 url("https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/13239226_10154232545414048_8868543039140575608_n.jpg") left repeat-x;
   background-size: auto;
   background-position: bottom;
   z-index: 1000;
@@ -102,7 +133,6 @@ form input[type=submit]{
     padding: 0 20px;
     font-size: 16px;
     line-height: 2.6em;
-    font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
     font-weight: 400;
     -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.1);
     -moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,.1);
