@@ -22,8 +22,14 @@
                        <button>Submit</button>
                     </a>
 
+                    <br><br><br>
+                    <button onclick="myFunction()">Click me</button>
 
+
+
+                    <p id="flightInfo"></p>
                     <script>
+                    function myFunction() {}
                         var settings = {
                           "async": true,
                           "crossDomain": true,
@@ -36,7 +42,11 @@
                           }
                         $.ajax(settings).done(function (response) {
                           console.log(response);
+
                         });
+                                                  document.getElementById("flightInfo").innerHTML = "hi";
+
+                    }
                     </script>
                 </div>
             </div>
