@@ -19,7 +19,11 @@ def hello():
     name=request.form['yourname']
     email=request.form['youremail']
 
-    return render_template('form_action.html', name=name, email=email)
+    flightcode=request.form['yourflightcode']
+    airline=request.form['yourairline']
+    flightnumber=request.form['yourflightnumber']
+
+    return render_template('form_action.html', name=name, email=email, flightcode=flightcode, airline=airline, flightnumber=flightnumber)
 
 # Run the app :)
 if __name__ == '__main__':
