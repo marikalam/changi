@@ -1,54 +1,45 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Changi Confirm</title>
-        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
-    </head>
-    <body>
+{% extends "base.html" %}
 
-    	  <div class="bottomAnim">
+{% block content %}
+{% include 'partials/flight-information.html'  %}
 
-	        <div class="container">
+<form action="demo_form.asp" method="get">
+  <label class="control control--checkbox">
+      <input type="checkbox" id="f01" checked />
+      <div class="content">
+        <span><strong>Ippudo Express</strong></span>
+        <span>Japanese</span>
+        <span>1 min to destination</span>
+      </div>
+      <div class="control__indicator"></div>
+  </label>
+    <label class="control control--checkbox">
+      <input type="checkbox" id="t01" checked />
+      <div class="content">
+        <span><strong>Toilet</strong></span>
+        <span>3 min to destination</span>
+      </div>
+      <div class="control__indicator"></div>
+    </label>
+  <label class="control control--checkbox">
+    <input type="checkbox" id="s01" checked />
+    <div class="content">
+      <span><strong>Michael Kors</strong></span>
+      <span>Fashion &amp; Accessories</span>
+      <span>1 min to destination</span>
+    </div>
+    <div class="control__indicator"></div>
+  </label>
+</form>
 
-	        	<center><img src="../static/changi-logo.png"></center><br><br>
+<video controls autoplay>
+  <source src="../static/movie2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-	        	You have 1 hour, 36 minutes of leisure time before boarding at Gate 39.<br><br>
+{% include 'partials/download-changi-app.html'  %}
 
-	        	Wrong time? Change your flight <a href="/">here</a>.
-   	
-	        	<h1>Food and Drink</h1>
-	            <form action="demo_form.asp" method="get">
-				  <input type="checkbox" checked>Ippudo Express<br>
-				</form>
-
-				<h1>Toilet</h1>
-	            <form action="demo_form.asp" method="get">
-				  <input type="checkbox" checked>Toilet<br>
-				</form>
-
-				<h1>Shopping</h1>
-	            <form action="demo_form.asp" method="get">
-				  <input type="checkbox" checked>Michael Kors<br>
-				</form>
-
-				<video controls autoplay>
-				  <source src="../static/movie.mp4" type="video/mp4">
-				  Your browser does not support the video tag.
-				</video>
-
-
-
-
-				<a href="#" style="text-decoration:none;">
-                		<font color="#D3D3D3">Download the iChangi app for more options.</font>
-           		 </a><br><br>
-
-	        </div>
-	    </div>
-	    </div>
-    </body>
-</html>
-
+<a href="/foodlistpicked">
+  <button class="yellow-button">Next</button>
+</a>
+{% endblock %}
