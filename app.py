@@ -35,8 +35,12 @@ def beforeBoarding():
 
 
 @app.route('/straightToFlight/', methods=['GET'])
-def toFli():
+def toFlight():
     return render_template('to_flight.html')
+
+@app.route('/foodlist/', methods=['GET'])
+def getFoodList():
+    return render_template('food_list.html')
 
 
 
