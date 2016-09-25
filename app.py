@@ -28,11 +28,6 @@ def checkbox():
     return render_template('checkbox_action.html')
     
 
-@app.route('/beforeBoarding/', methods=['GET'])
-def beforeBoarding():
-    return render_template('before_boarding.html')
-
-
 
 @app.route('/straightToFlight/', methods=['GET'])
 def toFlight():
