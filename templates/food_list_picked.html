@@ -1,64 +1,47 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Changi Along the Way</title>
-        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
-    </head>
-    <body>
+{% extends "base.html" %}
 
-        <div class="bottomAnim">
-          <div class="container">
-            <div class="logo-header"><img src="../static/changi-logo@2x.png"></div>
+{% block content %}
+<p class="content-hero content-hero--fixed">You have <strong>1 hour, 36 minutes</strong> of leisure time before boarding at <strong>Gate 39</strong>.</p>
 
-          <p class="content-hero content-hero--fixed">You have <strong>1 hour, 36 minutes</strong> of leisure time before boarding at <strong>Gate 39</strong>.</p>
+<p>Wrong time? Change your flight <a href="/">here</a>.</p>
 
-          <p>Wrong time? Change your flight <a href="/">here</a>.</p>
-
-        <form action="demo_form.asp" method="get">
-        <label class="control control--checkbox">
-            <input type="checkbox" id="f01" checked />
-            <div class="content">
-              <span><strong>Ippudo Express</strong></span>
-              <span>Japanese</span>
-              <span>1 min to destination</span>
-            </div>
-            <div class="control__indicator"></div>
-        </label>
-          <label class="control control--checkbox">
-            <input type="checkbox" id="t01" checked />
-            <div class="content">
-              <span><strong>Toilet</strong></span>
-              <span>3 min to destination</span>
-            </div>
-            <div class="control__indicator"></div>
-          </label>
-        <label class="control control--checkbox">
-          <input type="checkbox" id="s01" checked />
-          <div class="content">
-            <span><strong>Michael Kors</strong></span>
-            <span>Fashion &amp; Accessories</span>
-            <span>1 min to destination</span>
-          </div>
-          <div class="control__indicator"></div>
-        </label>
-        </form>
-
-        <video controls autoplay>
-          <source src="../static/movie2.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-
-        <p><a href="http://www.changiairport.com/en/download-app.html">Download the iChangi app for more options.</a></p>
-        <a href="/foodlistpicked">
-          <button class="yellow-button">Next</button>
-        </a>
-
-          </div>
+<form action="demo_form.asp" method="get">
+  <label class="control control--checkbox">
+      <input type="checkbox" id="f01" checked />
+      <div class="content">
+        <span><strong>Ippudo Express</strong></span>
+        <span>Japanese</span>
+        <span>1 min to destination</span>
       </div>
+      <div class="control__indicator"></div>
+  </label>
+    <label class="control control--checkbox">
+      <input type="checkbox" id="t01" checked />
+      <div class="content">
+        <span><strong>Toilet</strong></span>
+        <span>3 min to destination</span>
       </div>
-    </body>
-</html>
+      <div class="control__indicator"></div>
+    </label>
+  <label class="control control--checkbox">
+    <input type="checkbox" id="s01" checked />
+    <div class="content">
+      <span><strong>Michael Kors</strong></span>
+      <span>Fashion &amp; Accessories</span>
+      <span>1 min to destination</span>
+    </div>
+    <div class="control__indicator"></div>
+  </label>
+</form>
 
+<video controls autoplay>
+  <source src="../static/movie2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<p><a href="http://www.changiairport.com/en/download-app.html">Download the iChangi app for more options.</a></p>
+
+<a href="/foodlistpicked">
+  <button class="yellow-button">Next</button>
+</a>
+{% endblock %}

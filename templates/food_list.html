@@ -1,121 +1,105 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Changi Along the Way</title>
-        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
-    </head>
-    <body>
+{% extends "base.html" %}
 
-      <div class="bottomAnim">
-        <div class="container">
-          <div class="logo-header"><img src="../static/changi-logo@2x.png"></div>
+{% block content %}
+<p class="content-hero content-hero--fixed">You have <strong>1 hour, 36 minutes</strong> of leisure time before boarding at <strong>Gate 39</strong>.</p>
 
-        <p class="content-hero content-hero--fixed">You have <strong>1 hour, 36 minutes</strong> of leisure time before boarding at <strong>Gate 39</strong>.</p>
+<p>Wrong time? Change your flight <a href="/">here</a>.</p>
 
-        <p>Wrong time? Change your flight <a href="/">here</a>.</p>
+<h1>Food and Drink</h1>
+<form action="demo_form.asp" method="get" class="control-group">
+  <label class="control control--checkbox">
+    <input type="checkbox" id="f01" />
+    <div class="content">
+      <span><strong>Ippudo Express</strong></span>
+      <span>Japanese</span>
+      <span>1 min to destination</span>
+    </div>
+    <div class="control__indicator"></div>
+  </label>
+  <label class="control control--checkbox">
+    <input type="checkbox" id="f02" />
+    <div class="content">
+      <span><strong>Tai Hing</strong></span>
+      <span>Chinese</span>
+      <span>1 min to destination</span>
+    </div>
+    <div class="control__indicator"></div>
+  </label>
+  <label class="control control--checkbox">
+    <input type="checkbox" id="f03" />
+    <div class="content">
+      <span><strong>O'Leary's Sports Bar and Grill</strong></span>
+      <span>Irish Pub</span>
+      <span>2 min to destination</span>
+    </div>
+    <div class="control__indicator"></div>
+  </label>
+  <label class="control control--checkbox">
+    <input type="checkbox" id="f04" />
+    <div class="content">
+      <span><strong>The Coffee Bean and Tea Leaf</strong></span>
+      <span>Coffee &amp; Tea</span>
+      <span>2 min to destination</span>
+    </div>
+    <div class="control__indicator"></div>
+  </label>
+</form>
 
-        <h1>Food and Drink</h1>
-        <form action="demo_form.asp" method="get" class="control-group">
-          <label class="control control--checkbox">
-            <input type="checkbox" id="f01" />
-            <div class="content">
-              <span><strong>Ippudo Express</strong></span>
-              <span>Japanese</span>
-              <span>1 min to destination</span>
-            </div>
-            <div class="control__indicator"></div>
-          </label>
-          <label class="control control--checkbox">
-            <input type="checkbox" id="f02" />
-            <div class="content">
-              <span><strong>Tai Hing</strong></span>
-              <span>Chinese</span>
-              <span>1 min to destination</span>
-            </div>
-            <div class="control__indicator"></div>
-          </label>
-          <label class="control control--checkbox">
-            <input type="checkbox" id="f03" />
-            <div class="content">
-              <span><strong>O'Leary's Sports Bar and Grill</strong></span>
-              <span>Irish Pub</span>
-              <span>2 min to destination</span>
-            </div>
-            <div class="control__indicator"></div>
-          </label>
-          <label class="control control--checkbox">
-            <input type="checkbox" id="f04" />
-            <div class="content">
-              <span><strong>The Coffee Bean and Tea Leaf</strong></span>
-              <span>Coffee &amp; Tea</span>
-              <span>2 min to destination</span>
-            </div>
-            <div class="control__indicator"></div>
-          </label>
+<h1>Toilet</h1>
+<form action="demo_form.asp" method="get">
+  <label class="control control--checkbox">
+    <input type="checkbox" id="t01" />
+    <div class="content">
+      <span><strong>Toilet</strong></span>
+      <span>3 min to destination</span>
+    </div>
+    <div class="control__indicator"></div>
+  </label>
+</form>
 
-        <h1>Toilet</h1>
-        <form action="demo_form.asp" method="get">
-          <label class="control control--checkbox">
-            <input type="checkbox" id="t01" />
-            <div class="content">
-              <span><strong>Toilet</strong></span>
-              <span>3 min to destination</span>
-            </div>
-            <div class="control__indicator"></div>
-          </label>
-        </form>
+<h1>Shopping</h1>
+<form action="demo_form.asp" method="get">
+<label class="control control--checkbox">
+    <input type="checkbox" id="s01" />
+    <div class="content">
+      <span><strong>Michael Kors</strong></span>
+      <span>Fashion &amp; Accessories</span>
+      <span>1 min to destination</span>
+    </div>
+    <div class="control__indicator"></div>
+  </label>
+  <label class="control control--checkbox">
+    <input type="checkbox" id="s02" />
+    <div class="content">
+      <span><strong>DFS Wine &amp; Spirits</strong></span>
+      <span>Wine, Spirits, &amp; Tobacco</span>
+      <span>1 min to destination</span>
+    </div>
+    <div class="control__indicator"></div>
+  </label>
+  <label class="control control--checkbox">
+    <input type="checkbox" id="s03" />
+    <div class="content">
+      <span><strong>Guardian Health and Beauty</strong></span>
+      <span>Beauty &amp; Wellness</span>
+      <span>2 min to destination</span>
+    </div>
+    <div class="control__indicator"></div>
+  </label>
+  <label class="control control--checkbox">
+    <input type="checkbox" id="s04" />
+    <div class="content">
+      <span><strong>Hermes</strong></span>
+      <span>Fashion &amp; Accessories</span>
+      <span>2 min to destination</span>
+    </div>
+    <div class="control__indicator"></div>
+  </label>
+</form>
 
-        <h1>Shopping</h1>
-        <form action="demo_form.asp" method="get">
-        <label class="control control--checkbox">
-            <input type="checkbox" id="s01" />
-            <div class="content">
-              <span><strong>Michael Kors</strong></span>
-              <span>Fashion &amp; Accessories</span>
-              <span>1 min to destination</span>
-            </div>
-            <div class="control__indicator"></div>
-          </label>
-          <label class="control control--checkbox">
-            <input type="checkbox" id="s02" />
-            <div class="content">
-              <span><strong>DFS Wine &amp; Spirits</strong></span>
-              <span>Wine, Spirits, &amp; Tobacco</span>
-              <span>1 min to destination</span>
-            </div>
-            <div class="control__indicator"></div>
-          </label>
-          <label class="control control--checkbox">
-            <input type="checkbox" id="s03" />
-            <div class="content">
-              <span><strong>Guardian Health and Beauty</strong></span>
-              <span>Beauty &amp; Wellness</span>
-              <span>2 min to destination</span>
-            </div>
-            <div class="control__indicator"></div>
-          </label>
-          <label class="control control--checkbox">
-            <input type="checkbox" id="s04" />
-            <div class="content">
-              <span><strong>Hermes</strong></span>
-              <span>Fashion &amp; Accessories</span>
-              <span>2 min to destination</span>
-            </div>
-            <div class="control__indicator"></div>
-          </label>
-        </form>
+<p><a href="http://www.changiairport.com/en/download-app.html">Download the iChangi app for more options.</a></p>
 
-        <p><a href="http://www.changiairport.com/en/download-app.html">Download the iChangi app for more options.</a></p>
-
-        <a href="/foodlistpicked">
-            <button class="yellow-button">Next</button>
-        </a>
-          </div>
-      </div>
-      </div>
-    </body>
-</html>
-
+<a href="/foodlistpicked">
+    <button class="yellow-button">Next</button>
+</a>
+{% endblock %}

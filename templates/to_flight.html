@@ -1,23 +1,10 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Changi Along the Way</title>
-        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
-    </head>
-    <body>
-        <div id="container" class="container">
-             <div class="logo-header"><img src="../static/changi-logo@2x.png"></div>
+{% extends "base.html" %}
 
-            <div id="content" class="content-body">
-                <p>You have <strong>36 minutes</strong> of leisure time before boarding at <strong>Gate 39</strong>.</p>
+{% block content %}
+<p>You have <strong>36 minutes</strong> of leisure time before boarding at <strong>Gate 39</strong>.</p>
 
-                <p>Time to pass security at gate: <strong>10 minutes.</strong></p>
+<p>Time to pass security at gate: <strong>10 minutes.</strong></p>
 
-                <p><a href="http://www.changiairport.com/en/download-app.html">Download the iChangi app for more options.</a></p>
-            </div>
-        </div>
-    </body>
-</html>
+<p><a href="http://www.changiairport.com/en/download-app.html">Download the iChangi app for more options.</a></p>
+{% endblock %}
+

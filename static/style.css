@@ -7,7 +7,7 @@ body {
   min-height: 100vh;
   color: #1F323A; }
 
-.content-body span {
+.welcome-content-body span {
   color: #9D978F; }
 
 img, video {
@@ -42,8 +42,9 @@ img, video {
     margin-bottom: 24px; }
   .container input, .container textarea {
     -webkit-border-radius: 0; }
-  .container .content-body input {
-    border-radius: 5px; }
+  .container .welcome-content-body input {
+    border-radius: 5px;
+    -webkit-appearance: none; }
   .container .content-hero {
     font-size: 25px;
     display: block;

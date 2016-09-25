@@ -1,140 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Changi Along the Way</title>
-    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"
-    type="text/css">
-    <link href=
-    "https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i"
-    rel="stylesheet">
-    <script src=
-    "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
-    </script>
+{% extends "base.html" %}
 
-         <script type="text/javascript">
-  function sendEmail() {
-   var name = "Marika";
-    var email = "marikalee15@gmail.com";
-    var service = "";
-    var amount = "";
-    var dueDate = "";
-
-    var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://api.yaas.io/hybris/email/v1/bizinvoice/send-sync",
-    "method": "POST",
-    "headers": {
-      "authorization": "Bearer 022-7d64f514-c110-4eb2-ac4c-f69e241cbf92",
-      "content-type": "application/json",
-      "cache-control": "no-cache",
-      "postman-token": "0ff5e1a7-99d9-ca59-be98-6f916af66b7a"
-    },
-      "processData": false,
-       "data": "{\n    \"toAddress\": \"" + email + "\",\n    \"fromAddress\": \"noreply@bizinvoice.mail.yaas.io\",\n    \"toName\": \"Marika\",\n    \"fromName\": \"Changi Along The Way\",\n    \"replyToName\": \"Support\",\n    \"replyToAddress\": \"support@yourProject.mail.yaas.io\",\n    \"attributes\": [\n         {\n            \"key\": \"body\",\n            \"value\": \"<div style=\\\"width:80%; margin: 0 auto\\\" align=\\\"center\\\"><p style=\\\"border:1px solid grey; border-radius:25px;\\\"><div><div style=\\\"width:50%;height:120px; float:left;\\\" align=“left\\\"><p style=\\\"font-size:1.75em;font-weight:bold;margin-bottom: 0px; margin-top: 0px\\\">Hi Marika! Letting you know your flight is in 30 minutes! Please be at Gate 13 for Flight #UA896.</p><br><label style=\\\"font-weight:bold\\\">Date:</label><style=\\\"margin-bottom: 0px\\\">9/11/16</style></div><div style=\\\"width:50%;height:120px;float:right;\\\" align=\\\"right\\\"><p style=\\\"font-size:1.4em; font-weight:bold; font-style: italic; margin-bottom: 0px; margin-top: 0px\\\">Stark Industries, Inc.</p><p style=\\\"margin-bottom: 0px; font-style: italic; margin-top: 0px\\\">123 Apple Lane, Orchard, CA 12345</p><p style=\\\"font-size:0.9em; font-style: italic; margin-top: 0px\\\">123-456-7890</p></div></div></p><br><div align=\\\"left\\\"><label style=\\\"font-weight:bold\\\">Bill To:</label><p style=\\\"margin-bottom: 0px\\\">" + name + "</p><p style=\\\"margin-bottom: 0px; margin-top: 0px\\\">234 Grape Street</p><p style=\\\"margin-bottom: 0px; margin-top: 0px\\\">Vineyard, CA 23456</p><p style=\\\"margin-top: 0px\\\">" + email + "</p></div><br><br><table style=\\\"width:100%\\\"><tr style=\\\"height:50px\\\"><th style=\\\"width:80%\\\" align=\\\"left\\\">Service</th><th>Amount</th></tr><tr><th style=\\\"font-weight: normal\\\" align=\\\"left\\\">" + service + "</th><th style=\\\"font-weight: normal\\\">$" + amount + "</th></tr><tr style=\\\"height:20px\\\"><th align=\\\"right\\\">Amount Due:</th><th>$" + amount + "</th></tr><tr style=\\\"height:20px\\\"><th align=\\\"right\\\">Term:</th><th>Net " + dueDate + " days</th></tr></table><br><br><p style=\\\"font-weight:bold\\\">Thank you very much!</p></div>\"\n        },\n        {\n            \"key\": \"subject\",\n            \"value\": \"Your boarding time is in 30 minutes!\"\n        }\n    ]\n}"
-    }
-
-    $.ajax(settings).done(function (response) {
-      console.log(response);
-    });
-    alert('Email sent!');
-  }
+{% block head %}
+  <script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
   </script>
 
+  <script type="text/javascript">
+    function sendEmail() {
+     var name = "Marika";
+      var email = "marikalee15@gmail.com";
+      var service = "";
+      var amount = "";
+      var dueDate = "";
 
-    <script type="text/javascript">
-          function getFlightInfo() {
-            var settings = {
-                  "async": true,
-                  "crossDomain": true,
-                  "url": "https://flifo-qa.api.aero/flifo/v3/flight/SIN/UA/896/d",
-                  "method": "GET",
-                  "headers": {
-                    "x-apikey": "2cfd0827f82ceaccae7882938b4b1627",
-                    "cache-control": "no-cache",
-                    "postman-token": "d345eb2b-a556-b114-af2e-af1e5c3b599e"
-                  }
+      var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://api.yaas.io/hybris/email/v1/bizinvoice/send-sync",
+      "method": "POST",
+      "headers": {
+        "authorization": "Bearer 022-7d64f514-c110-4eb2-ac4c-f69e241cbf92",
+        "content-type": "application/json",
+        "cache-control": "no-cache",
+        "postman-token": "0ff5e1a7-99d9-ca59-be98-6f916af66b7a"
+      },
+        "processData": false,
+         "data": "{\n    \"toAddress\": \"" + email + "\",\n    \"fromAddress\": \"noreply@bizinvoice.mail.yaas.io\",\n    \"toName\": \"Marika\",\n    \"fromName\": \"Changi Along The Way\",\n    \"replyToName\": \"Support\",\n    \"replyToAddress\": \"support@yourProject.mail.yaas.io\",\n    \"attributes\": [\n         {\n            \"key\": \"body\",\n            \"value\": \"<div style=\\\"width:80%; margin: 0 auto\\\" align=\\\"center\\\"><p style=\\\"border:1px solid grey; border-radius:25px;\\\"><div><div style=\\\"width:50%;height:120px; float:left;\\\" align=“left\\\"><p style=\\\"font-size:1.75em;font-weight:bold;margin-bottom: 0px; margin-top: 0px\\\">Hi Marika! Letting you know your flight is in 30 minutes! Please be at Gate 13 for Flight #UA896.</p><br><label style=\\\"font-weight:bold\\\">Date:</label><style=\\\"margin-bottom: 0px\\\">9/11/16</style></div><div style=\\\"width:50%;height:120px;float:right;\\\" align=\\\"right\\\"><p style=\\\"font-size:1.4em; font-weight:bold; font-style: italic; margin-bottom: 0px; margin-top: 0px\\\">Stark Industries, Inc.</p><p style=\\\"margin-bottom: 0px; font-style: italic; margin-top: 0px\\\">123 Apple Lane, Orchard, CA 12345</p><p style=\\\"font-size:0.9em; font-style: italic; margin-top: 0px\\\">123-456-7890</p></div></div></p><br><div align=\\\"left\\\"><label style=\\\"font-weight:bold\\\">Bill To:</label><p style=\\\"margin-bottom: 0px\\\">" + name + "</p><p style=\\\"margin-bottom: 0px; margin-top: 0px\\\">234 Grape Street</p><p style=\\\"margin-bottom: 0px; margin-top: 0px\\\">Vineyard, CA 23456</p><p style=\\\"margin-top: 0px\\\">" + email + "</p></div><br><br><table style=\\\"width:100%\\\"><tr style=\\\"height:50px\\\"><th style=\\\"width:80%\\\" align=\\\"left\\\">Service</th><th>Amount</th></tr><tr><th style=\\\"font-weight: normal\\\" align=\\\"left\\\">" + service + "</th><th style=\\\"font-weight: normal\\\">$" + amount + "</th></tr><tr style=\\\"height:20px\\\"><th align=\\\"right\\\">Amount Due:</th><th>$" + amount + "</th></tr><tr style=\\\"height:20px\\\"><th align=\\\"right\\\">Term:</th><th>Net " + dueDate + " days</th></tr></table><br><br><p style=\\\"font-weight:bold\\\">Thank you very much!</p></div>\"\n        },\n        {\n            \"key\": \"subject\",\n            \"value\": \"Your boarding time is in 30 minutes!\"\n        }\n    ]\n}"
+      }
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
+      alert('Email sent!');
+    }
+  </script>
+
+  <script type="text/javascript">
+        function getFlightInfo() {
+          var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://flifo-qa.api.aero/flifo/v3/flight/SIN/UA/896/d",
+                "method": "GET",
+                "headers": {
+                  "x-apikey": "2cfd0827f82ceaccae7882938b4b1627",
+                  "cache-control": "no-cache",
+                  "postman-token": "d345eb2b-a556-b114-af2e-af1e5c3b599e"
                 }
+              }
 
-                $.ajax(settings).done(function (response) {
-                  console.log(response);
-                  document.getElementById("airportCode").innerHTML = "HKG";
-                  document.getElementById("status").innerHTML = "Scheduled";
-                  document.getElementById("gate").innerHTML = "E26";
-                });
-          }
-    </script>
-</head>
+              $.ajax(settings).done(function (response) {
+                console.log(response);
+                document.getElementById("airportCode").innerHTML = "HKG";
+                document.getElementById("status").innerHTML = "Scheduled";
+                document.getElementById("gate").innerHTML = "E26";
+              });
+        }
+  </script>
+{% endblock %}
 
-<body>
-    <div class="container">
-        <div class="logo-header"><img src="../static/changi-logo@2x.png"></div>
-        <div class="title content-title">
-          <h1>Welcome <strong>{{name}}!</strong></h1>
-        </div>
+{% block content %}
+<div class="title content-title">
+  <h1>Welcome <strong>{{name}}!</strong></h1>
+</div>
 
-        <div class="content-body" id="content">
-            <p class="content-hero">Your flight, <strong>UA896</strong>, leaves <strong>Terminal 2 (T2)</strong> in <strong>2 hours and 37 minutes</strong>.</p>
+<p class="content-hero">Your flight, <strong>UA896</strong>, leaves <strong>Terminal 2 (T2)</strong> in <strong>2 hours and 37 minutes</strong>.</p>
 
-            <p>We estimate you will need:</p>
-            <ul>
-              <li><strong>14 minutes</strong> to check in</li>
-              <li><strong>13 minutes</strong> to pass immigration</li>
-              <li><strong>16 minutes</strong> to pass security at your gate</li>
-            </ul>
-            <p>Is there anything you need before boarding?</p>
+<p>We estimate you will need:</p>
+<ul>
+  <li><strong>14 minutes</strong> to check in</li>
+  <li><strong>13 minutes</strong> to pass immigration</li>
+  <li><strong>16 minutes</strong> to pass security at your gate</li>
+</ul>
+<p>Is there anything you need before boarding?</p>
 
-            <a href="/straightToFlight">
-                No, take me straight to my flight.
-            </a>
+<a href="/straightToFlight">
+    No, take me straight to my flight.
+</a>
 
-             <form>
-             <label class="control control--checkbox">
-                <input type="checkbox" id="eatdrink" />
-                <div class="content">
-                  <span>I would like to eat or drink something.</span>
-                </div>
-                <div class="control__indicator"></div>
-            </label>
-            <label class="control control--checkbox">
-                <input type="checkbox" id="toilet" />
-                <div class="content">
-                  <span>I would like to use the toilet.</span>
-                </div>
-                <div class="control__indicator"></div>
-            </label>
-
-            <label class="control control--checkbox">
-                <input type="checkbox" id="relaxrest" />
-                <div class="content">
-                  <span>I would like to relax and get some rest.</span>
-                </div>
-                <div class="control__indicator"></div>
-            </label>
-
-            <label class="control control--checkbox">
-                <input type="checkbox" id="souvenir" />
-                <div class="content">
-                  <span>I would like to buy a souvenir.</span>
-                </div>
-                <div class="control__indicator"></div>
-            </label>
-            </form>
-
-            <form>
-            <span>Send me an email 30 minutes before my flight?</span>
-            <label class="control--radio">
-            <input type="radio" name="optradio" value="yes" checked>Yes
-            <input type="radio" name="optradio" value="no">No
-            </label>
-            </form>
-
-            <a href="/checkbox">
-              <button class="yellow-button">Next</button>
-            </a>
-        </div>
+<form>
+ <label class="control control--checkbox">
+    <input type="checkbox" id="eatdrink" />
+    <div class="content">
+      <span>I would like to eat or drink something.</span>
     </div>
-</body>
-</html>
+    <div class="control__indicator"></div>
+</label>
+<label class="control control--checkbox">
+    <input type="checkbox" id="toilet" />
+    <div class="content">
+      <span>I would like to use the toilet.</span>
+    </div>
+    <div class="control__indicator"></div>
+</label>
+
+<label class="control control--checkbox">
+    <input type="checkbox" id="relaxrest" />
+    <div class="content">
+      <span>I would like to relax and get some rest.</span>
+    </div>
+    <div class="control__indicator"></div>
+</label>
+
+<label class="control control--checkbox">
+    <input type="checkbox" id="souvenir" />
+    <div class="content">
+      <span>I would like to buy a souvenir.</span>
+    </div>
+    <div class="control__indicator"></div>
+</label>
+</form>
+
+<form>
+  <span>Send me an email 30 minutes before my flight?</span>
+  <label class="control--radio">
+  <input type="radio" name="optradio" value="yes" checked>Yes
+  <input type="radio" name="optradio" value="no">No
+  </label>
+</form>
+
+<a href="/checkbox">
+  <button class="yellow-button">Next</button>
+</a>
+{% endblock %}
