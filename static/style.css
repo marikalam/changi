@@ -12,6 +12,9 @@ body {
 .content-body span {
   color: #97A1A5; }
 
+img {
+  max-width: 100%; }
+
 .container {
   background-color: #FFF;
   padding: 24px;
@@ -62,11 +65,11 @@ body {
       border: 1px solid #6E367B; }
     @media (min-width: 402px) {
       .container form input[type=text] {
-        max-width: 250px; } }
+        max-width: 402px; } }
   .container .yellow-button {
     background-color: #FFD200;
     border-radius: 5px;
-    max-width: 250px;
+    max-width: 402px;
     color: #6E4B0E; }
     .container .yellow-button:hover {
       background-color: #FFE774; }

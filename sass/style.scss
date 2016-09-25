@@ -63,6 +63,10 @@ body {
     }
 }
 
+img {
+    max-width: 100%;
+}
+
 .container {
     background-color: $white;
     padding: 24px;
@@ -108,14 +112,14 @@ body {
             border: 1px solid $purple400;
         }
         @media (min-width: $screen-sm) {
-            max-width: 250px;
+            max-width: $screen-sm;
         }
    }
 
     .yellow-button {
         background-color: $yellow300;
         border-radius: 5px;
-        max-width: 250px;
+        max-width: $screen-sm;
         color: $yellow500;
         &:hover {
             background-color: $yellow200;
