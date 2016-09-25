@@ -239,3 +239,14 @@ h4, h5, h6 {
 
 form {
   display: block; }
+
+.logo-block {
+  display: block;
+  min-height: 60px;
+  margin-bottom: 10px; }
+  .logo-block img {
+    margin-right: 16px;
+    margin-bottom: 8px; }
+
+span {
+  margin-bottom: 4px; }
