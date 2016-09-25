@@ -12,6 +12,38 @@
     <script src=
     "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
     </script>
+
+         <script type="text/javascript">
+  function sendEmail() { 
+   var name = "Marika";
+    var email = "marikalee15@gmail.com";
+    var service = "";
+    var amount = "";
+    var dueDate = "";
+
+    var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.yaas.io/hybris/email/v1/bizinvoice/send-sync",
+    "method": "POST",
+    "headers": {
+      "authorization": "Bearer 022-7d64f514-c110-4eb2-ac4c-f69e241cbf92",
+      "content-type": "application/json",
+      "cache-control": "no-cache",
+      "postman-token": "0ff5e1a7-99d9-ca59-be98-6f916af66b7a"
+    },
+      "processData": false,
+       "data": "{\n    \"toAddress\": \"" + email + "\",\n    \"fromAddress\": \"noreply@bizinvoice.mail.yaas.io\",\n    \"toName\": \"Marika\",\n    \"fromName\": \"Changi Along The Way\",\n    \"replyToName\": \"Support\",\n    \"replyToAddress\": \"support@yourProject.mail.yaas.io\",\n    \"attributes\": [\n         {\n            \"key\": \"body\",\n            \"value\": \"<div style=\\\"width:80%; margin: 0 auto\\\" align=\\\"center\\\"><p style=\\\"border:1px solid grey; border-radius:25px;\\\"><div><div style=\\\"width:50%;height:120px; float:left;\\\" align=“left\\\"><p style=\\\"font-size:1.75em;font-weight:bold;margin-bottom: 0px; margin-top: 0px\\\">Hi Marika! Letting you know your flight is in 30 minutes! Please be at Gate 13 for Flight #UA896.</p><br><label style=\\\"font-weight:bold\\\">Date:</label><style=\\\"margin-bottom: 0px\\\">9/11/16</style></div><div style=\\\"width:50%;height:120px;float:right;\\\" align=\\\"right\\\"><p style=\\\"font-size:1.4em; font-weight:bold; font-style: italic; margin-bottom: 0px; margin-top: 0px\\\">Stark Industries, Inc.</p><p style=\\\"margin-bottom: 0px; font-style: italic; margin-top: 0px\\\">123 Apple Lane, Orchard, CA 12345</p><p style=\\\"font-size:0.9em; font-style: italic; margin-top: 0px\\\">123-456-7890</p></div></div></p><br><div align=\\\"left\\\"><label style=\\\"font-weight:bold\\\">Bill To:</label><p style=\\\"margin-bottom: 0px\\\">" + name + "</p><p style=\\\"margin-bottom: 0px; margin-top: 0px\\\">234 Grape Street</p><p style=\\\"margin-bottom: 0px; margin-top: 0px\\\">Vineyard, CA 23456</p><p style=\\\"margin-top: 0px\\\">" + email + "</p></div><br><br><table style=\\\"width:100%\\\"><tr style=\\\"height:50px\\\"><th style=\\\"width:80%\\\" align=\\\"left\\\">Service</th><th>Amount</th></tr><tr><th style=\\\"font-weight: normal\\\" align=\\\"left\\\">" + service + "</th><th style=\\\"font-weight: normal\\\">$" + amount + "</th></tr><tr style=\\\"height:20px\\\"><th align=\\\"right\\\">Amount Due:</th><th>$" + amount + "</th></tr><tr style=\\\"height:20px\\\"><th align=\\\"right\\\">Term:</th><th>Net " + dueDate + " days</th></tr></table><br><br><p style=\\\"font-weight:bold\\\">Thank you very much!</p></div>\"\n        },\n        {\n            \"key\": \"subject\",\n            \"value\": \"Your boarding time is in 30 minutes!\"\n        }\n    ]\n}"
+    }
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
+    alert('Email sent!'); 
+  }
+  </script>
+
+
     <script type="text/javascript">
           function getFlightInfo() { 
             var settings = {
@@ -44,6 +76,7 @@
         </div>
 
         <div class="content-body" id="content">
+
             Your flight <strong>UA896</strong> leaves <strong>Terminal 2 </strong>in <strong>2 hours 37 minutes</strong><br><br>
 
             We estimate you will need<br>
@@ -70,11 +103,18 @@
                <input type="radio" id="souvenir">
               <label for="souvenir">I would like to buy a souvenir</label><br><br>
               
+       
+            <input type="radio" name="gender" value="yes" checked> Yes<br>
+            <input type="radio" name="gender" value="no"> No<br>
+
             </form>    
                   
              <a href="/beforeBoarding" >
                 <button>Next</button>
             </a>
+
+            <button style="width:25%; margin-left:37%;" onClick="sendEmail()"> Send me an email 30 minutes before my flight!</button>
+
 
         </div>
     </div>
