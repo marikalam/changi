@@ -1,11 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p class="content-hero content-hero--fixed">You have <strong>1 hour, 36 minutes</strong> of leisure time before boarding at <strong>Gate 39</strong>.</p>
+{% include 'partials/flight-information.html'  %}
 
-<p>Wrong time? Change your flight <a href="/">here</a>.</p>
-
-<h1>Food and Drink</h1>
+<h2>Food and Drink</h2>
 <form action="demo_form.asp" method="get" class="control-group">
   <label class="control control--checkbox">
     <input type="checkbox" id="f01" />
@@ -45,7 +43,7 @@
   </label>
 </form>
 
-<h1>Toilet</h1>
+<h2>Toilet</h2>
 <form action="demo_form.asp" method="get">
   <label class="control control--checkbox">
     <input type="checkbox" id="t01" />
@@ -57,7 +55,7 @@
   </label>
 </form>
 
-<h1>Shopping</h1>
+<h2>Shopping</h2>
 <form action="demo_form.asp" method="get">
 <label class="control control--checkbox">
     <input type="checkbox" id="s01" />
@@ -97,9 +95,9 @@
   </label>
 </form>
 
-<p><a href="http://www.changiairport.com/en/download-app.html">Download the iChangi app for more options.</a></p>
+{% include 'partials/download-changi-app.html'  %}
 
 <a href="/foodlistpicked">
-    <button class="yellow-button">Next</button>
+  <button class="yellow-button">Next</button>
 </a>
 {% endblock %}
