@@ -250,3 +250,18 @@ form {
 
 span {
   margin-bottom: 4px; }
+
+.app-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .app-description span {
+    font-size: 31.25px;
+    font-style: italic;
+    color: #9D978F; }
+
+.p-emphasize {
+  font-size: 20px; }

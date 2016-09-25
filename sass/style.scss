@@ -270,3 +270,17 @@ form {
 span {
     margin-bottom: 4px;
 }
+
+.app-description {
+    display: flex;
+    justify-content: center;
+    span {
+        font-size: $font-size-400;
+        font-style: italic;
+        color: $gray400;
+    }
+}
+
+.p-emphasize {
+    font-size: $font-size-200;
+}
