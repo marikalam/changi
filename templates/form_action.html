@@ -8,7 +8,7 @@
   <script type="text/javascript">
     function sendEmail() {
      var name = "Marika";
-      var email = "marikalee15@gmail.com";
+      var email = "renelam1421@gmail.com";
       var service = "";
       var amount = "";
       var dueDate = "";
@@ -18,7 +18,7 @@
       "url": "https://api.yaas.io/hybris/email/v1/bizinvoice/send-sync",
       "method": "POST",
       "headers": {
-        "authorization": "Bearer 022-7d64f514-c110-4eb2-ac4c-f69e241cbf92",
+        "authorization": "Bearer 021-4fdda7ce-ea8d-41ce-90ef-1963240001e1",
         "content-type": "application/json",
         "cache-control": "no-cache",
         "postman-token": "0ff5e1a7-99d9-ca59-be98-6f916af66b7a"
@@ -29,7 +29,6 @@
       $.ajax(settings).done(function (response) {
         console.log(response);
       });
-      alert('Email sent!');
     }
   </script>
 
@@ -61,7 +60,7 @@
   <h1>Welcome <strong>{{name}}!</strong></h1>
 </div>
 
-<p class="content-hero">Your flight, <strong>UA896</strong>, leaves <strong>Terminal 2 (T2)</strong> in <strong>2 hours and 37 minutes</strong>.</p>
+<p class="content-hero">Your flight, <strong>UA896</strong>, leaves <strong>Terminal 2 (T2)</strong> in <strong>1 hours and 37 minutes</strong>.</p>
 
 <p>We estimate you will need:</p>
 <ul>
@@ -112,7 +111,10 @@
   </label>
 </form>
 
+
+
 <a href="/checkbox">
-  <button class="yellow-button">Next</button>
+   <button class = "yellow-button" style="width:25%; margin-left:37%;" onClick="sendEmail()">Next</button>
+
 </a>
 {% endblock %}
