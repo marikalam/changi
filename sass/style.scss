@@ -52,7 +52,8 @@ body {
     font-size: 16px;
     background: linear-gradient(135deg, $red300 0%,$purple400 100%);
     height: 100%;
-    font-color: $black;
+    min-height: 100vh;
+    color: $black;
 }
 
 .content-body {
@@ -61,7 +62,7 @@ body {
     }
 }
 
-img {
+img, video {
     max-width: 100%;
 }
 
@@ -209,7 +210,11 @@ h4, h5, h6 {font-size: $font-size-100}
 }
 
 .control span {
-    strong {font-weight: 700;}
+    strong {
+        font-weight: 700;
+        color: $black;
+    }
+    color: $gray400;
     display: block;
 }
 
@@ -225,14 +230,28 @@ h4, h5, h6 {font-size: $font-size-100}
 }
 
 .control input {
-    lost-column: 1/12;
+    lost-column: 1/3;
+    @media (min-width: $screen-sm) {
+        lost-column: 1/8;
+    }
 }
 
 .control .content {
-    lost-column: 11/12;
+    lost-column: 2/3;
+    @media (min-width: $screen-sm) {
+        lost-column: 7/8;
+    }
 }
-
 
 .control--checkbox + label[type="checkbox"]:checked {
     background-color: $green300;
+}
+
+.button-input-fix {
+   -webkit-appearance: none;
+   -webkit-border-radius: 0;
+}
+
+form {
+    display: block;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Changi Confirm</title>
+    <title>Changi Along the Way</title>
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"
     type="text/css">
     <link href=
@@ -72,7 +72,7 @@
     <div class="container">
         <center><img src="../static/changi-logo.png"></center><br><br>
         <div class="title content-title">
-                <h1>Welcome <strong>{{name}}!</h1>
+          <h1>Welcome <strong>{{name}}!</h1>
         </div>
 
         <div class="content-body" id="content">
@@ -91,33 +91,48 @@
             </a>
 
              <form>
-              <input type="radio" id="eatdrink">
-              <label for="eatdrink">I would like to eat or drink something</label><br>
+             <label class="control control--checkbox">
+                <input type="checkbox" id="eatdrink" checked />
+                <div class="content">
+                  <span>I would like to eat or drink something.</span>
+                </div>
+                <div class="control__indicator"></div>
+            </label>
+            <label class="control control--checkbox">
+                <input type="checkbox" id="toilet" checked />
+                <div class="content">
+                  <span>I would like to use the toilet.</span>
+                </div>
+                <div class="control__indicator"></div>
+            </label>
 
-               <input type="radio" id="toilet">
-              <label for="toilet">I would like to use the toilet</label><br>
+            <label class="control control--checkbox">
+                <input type="checkbox" id="relaxrest" checked />
+                <div class="content">
+                  <span>I would like to relax and get some rest.</span>
+                </div>
+                <div class="control__indicator"></div>
+            </label>
 
-              <input type="radio" id="rest">
-              <label for="rest">I would like to relax and get some rest</label><br>
-
-              <input type="radio" id="souvenir">
-              <label for="souvenir">I would like to buy a souvenir</label><br><br>
-
-
-            <input type="radio" name="gender" value="yes" checked>Yes
-            <input type="radio" name="gender" value="no">No
-             <label for="souvenir">Send me an email 30 minutes before my flight?</label><br><br>
+            <label class="control control--checkbox">
+                <input type="checkbox" id="souvenir" checked />
+                <div class="content">
+                  <span>I would like to buy a souvenir.</span>
+                </div>
+                <div class="control__indicator"></div>
+            </label>
             </form>
 
+            <form>
+            <span>Send me an email 30 minutes before my flight?</span>
+            <label class="control--radio">
+            <input type="radio" name="optradio" value="yes" checked>Yes
+            <input type="radio" name="optradio" value="no">No
+            </form>
 
             <a href="/checkbox">
-              <button>Next</button>
+              <button class="yellow-button">Next</button>
             </a>
-
-
-            <button style="width:25%; margin-left:37%;" onClick="sendEmail()"> Send me an email 30 minutes before my flight!</button>
-
-
         </div>
     </div>
 </body>
