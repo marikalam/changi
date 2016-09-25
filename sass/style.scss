@@ -26,11 +26,11 @@ $yellow300: #FFD200;
 $yellow200: #FFE774;
 $yellow100: #FFF3BB;
 
-$gray500: #4D575B;
-$gray400: #97A1A5;
-$gray300: #BAC6CC;
-$gray200: #E4EBEF;
-$gray100: #F0F5F7;
+$gray500: #726E69;
+$gray400: #9D978F;
+$gray300: #D6D1CC;
+$gray200: #EDEAE6;
+$gray100: #FDF7F1;
 
 $font-size-100: 16px;
 $font-size-200: $font-size-100*1.25;
@@ -72,7 +72,7 @@ img {
     padding: 24px;
     border-radius: 5px;
     box-shadow: 0px 0px 16px 0px ($black,.12), 0px 16px 16px 0px ($black,.24);
-    lost-center: 960px;
+    lost-center: 768px;
     margin-top: 24px;
     margin-bottom: 24px;
     form label {
@@ -95,6 +95,15 @@ img {
 
     .content-body input {
         border-radius: 5px;
+    }
+
+    .content-hero {
+        font-size: $font-size-300;
+        display: block;
+        background-color: $gray100;
+        color: $gray500;
+        padding: 16px;
+
     }
 
     form input[type=text] {
@@ -144,9 +153,27 @@ img {
     }
 }
 
-p, span {
+p, span, li {
     font-size: $font-size-100;
+    font-weight: 400;
     line-height: 1.5;
+}
+
+a {
+    color: $gray300;
+    font-weight: 400;
+    &:hover {
+        color: $purple400;
+    }
+}
+
+li {
+    margin: 4px auto;
+}
+
+::selection {
+    background-color: $yellow300;
+    color: $yellow500;
 }
 
 h1 {font-size: $font-size-400}

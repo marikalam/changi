@@ -14,7 +14,7 @@
     </script>
 
          <script type="text/javascript">
-  function sendEmail() { 
+  function sendEmail() {
    var name = "Marika";
     var email = "marikalee15@gmail.com";
     var service = "";
@@ -39,13 +39,13 @@
     $.ajax(settings).done(function (response) {
       console.log(response);
     });
-    alert('Email sent!'); 
+    alert('Email sent!');
   }
   </script>
 
 
     <script type="text/javascript">
-          function getFlightInfo() { 
+          function getFlightInfo() {
             var settings = {
                   "async": true,
                   "crossDomain": true,
@@ -72,22 +72,22 @@
     <div class="container">
         <center><img src="../static/changi-logo.png"></center><br><br>
         <div class="title content-title">
-                <h1>Welcome <strong>{{name}}!</h1><br><br>
+                <h1>Welcome <strong>{{name}}!</h1>
         </div>
 
         <div class="content-body" id="content">
+            <p class="content-hero">Your flight, <strong>UA896</strong>, leaves <strong>Terminal 2 (T2)</strong>in <strong>2 hours and 37 minutes</strong>.</p>
 
-            Your flight <strong>UA896</strong> leaves <strong>Terminal 2 </strong>in <strong>2 hours 37 minutes</strong><br><br>
+            <p>We estimate you will need:</p>
+            <ul>
+              <li><strong>14 minutes</strong> to check in</li>
+              <li><strong>13 minutes</strong> to pass immigration</li>
+              <li><strong>16 minutes</strong> to pass security at your gate</li>
+            </ul>
+            <p>Is there anything you need before boarding?</p>
 
-            We estimate you will need<br>
-            <strong>14 minutes</strong> to check in
-            <strong>13 minutes</strong> to pass immigration
-            <strong>16 minutes</strong>to pass security at your gate<br><br>
-
-            Is there anything you need before boarding?<br><br>
-
-             <a href="/straightToFlight" style="text-decoration:none;">
-                <font color="#D3D3D3">No, take me straight to my flight.</font>
+            <a href="/straightToFlight">
+                No, take me straight to my flight.
             </a>
 
              <form>
@@ -96,19 +96,19 @@
 
                <input type="radio" id="toilet">
               <label for="toilet">I would like to use the toilet</label><br>
-              
+
               <input type="radio" id="rest">
               <label for="rest">I would like to relax and get some rest</label><br>
 
                <input type="radio" id="souvenir">
               <label for="souvenir">I would like to buy a souvenir</label><br><br>
-              
-       
+
+
             <input type="radio" name="gender" value="yes" checked> Yes<br>
             <input type="radio" name="gender" value="no"> No<br>
 
-            </form>    
-                  
+            </form>
+
              <a href="/beforeBoarding" >
                 <button>Next</button>
             </a>
