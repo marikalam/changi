@@ -42,6 +42,9 @@ def toFlight():
 def getFoodList():
     return render_template('food_list.html')
 
+@app.route('/foodlistpicked/', methods=['GET'])
+def getFoodListPicked():
+    return render_template('food_list_picked.html')
 
 
 # Run the app :)
