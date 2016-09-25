@@ -1,6 +1,34 @@
-<a href="/checkbox">
-  <button>YES</button>
-</a>
-<a href="/checkbox">
-  <button>No, take me straight to the flight.</button>
-</a>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Changi Confirm</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container" class="container">
+            <div class="title content-title">
+                <h1>Which option works best for you?</h1>
+            </div>
+            <div id="content" class="content-body">
+                <span>Welcome to Changi Airport! Tell us about your flight and we'll get you there on time.</span>
+
+
+                  <a href="/checkbox">
+					  <button>YES</button>
+					</a>
+					<a href="/checkbox">
+					  <button>No, take me straight to the flight.</button>
+					</a>
+                  <input type="submit" value="Get my Flight" class="yellow-button" />
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+

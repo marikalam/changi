@@ -1,15 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Changi Confirm</title>
-        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-        <script type="text/javascript">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Changi Confirm</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"
+    type="text/css">
+    <link href=
+    "https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i"
+    rel="stylesheet">
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+    <script type="text/javascript">
           function getFlightInfo() { 
             var settings = {
                   "async": true,
@@ -25,43 +28,47 @@
 
                 $.ajax(settings).done(function (response) {
                   console.log(response);
-                  document.getElementById("airportCode").innerHTML = response["airportCode"];
-                  document.getElementById("status").innerHTML = response["flightRecord"][0];
-                  document.getElementById("gate").innerHTML = response["flightRecord"][0];
+                  document.getElementById("airportCode").innerHTML = "HKG";
+                  document.getElementById("status").innerHTML = "Scheduled";
+                  document.getElementById("gate").innerHTML = "E26";
                 });
           }
-            </script>
-            </head>
-            <body>
+    </script>
+</head>
 
-            <div id="container">
-                <div class="title content-title">
-                    <h1>Welcome</h1>
-                </div>
-                <div id="content" class="content-body">
-                    Welcome <strong>{{name}}</strong>!
-                    <strong>{{flightcode}}</strong> of  <br>
-                    <strong>Singapore Airlines</strong> leaves<br>
-                    from Gate <strong><p id="gate"></p>.</strong><br> 
-                
-                     <button onclick="getFlightInfo()">Get Flight Info</button>
-                     
+<body>
+    <div id="container">
 
 
-                    We estimate you will need<br>
-              <!--       <strong>{{checkinTime}}</strong> to get checked in.<br>
-                    <strong>{{immigrationTime}}</strong> to get through immigration.
-                    <strong>{{securityTime}}</strong> to get through security. -->
-                    to get to Gate <p id="gate"></p>.
-
-                    <!-- <strong>(2 HOURS, 15 MINUTES)</strong><br> -->
-
-
-                    <a href="/beforeBoarding">
-                       <button>Next</button>
-                    </a>
-
-                </div>
+        <div class="title content-title">
+            <h1>Changi Along The Way</h1>
         </div>
-    </body>
+        <div class="content-body" id="content">
+            <span>Welcome <strong>{{name}}</strong>.</span><br><br>
+            Your flight <strong>UA896</strong> leaves <strong>Terminal 2</strong><br><br>
+
+            in <strong>2 HOURS 37 MINUTES.<br><br>
+
+             <form>
+              <input type="radio" id="eatdrink">
+              <label for="eatdrink">I would like to eat or drink something</label><br>
+
+               <input type="radio" id="toilet">
+              <label for="toilet">I would like to use the toilet</label><br>
+              
+              <input type="radio" id="rest">
+              <label for="rest">I would like to relax and get some rest</label><br>
+
+               <input type="radio" id="souvenir">
+              <label for="souvenir">I would like to buy a souvenir</label><br><br>
+              
+            </form>    
+                  
+             <a href="/beforeBoarding" >
+                <button>Next</button>
+            </a>
+
+        </div>
+    </div>
+</body>
 </html>
