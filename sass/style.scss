@@ -284,3 +284,10 @@ span {
 .p-emphasize {
     font-size: $font-size-200;
 }
+
+.control-radio {
+    margin: 10px 0;
+    input {
+        margin-right: 10px;
+    }
+}
