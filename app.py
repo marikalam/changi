@@ -33,6 +33,14 @@ def checkbox():
 def beforeBoarding():
     return render_template('before_boarding.html')
 
+
+
+@app.route('/straightToFlight/', methods=['GET'])
+def toFli():
+    return render_template('to_flight.html')
+
+
+
 # Run the app :)
 if __name__ == '__main__':
   app.run( 

@@ -39,12 +39,23 @@
 <body>
     <div class="container">
         <center><img src="../static/changi-logo.png"></center><br><br>
+        <div class="title content-title">
+                <h1>Welcome <strong>{{name}}!</h1><br><br>
+        </div>
 
         <div class="content-body" id="content">
-            <span>Welcome <strong>{{name}}</strong>.</span><br><br>
-            Your flight <strong>UA896</strong> leaves <strong>Terminal 2</strong><br><br>
+            Your flight <strong>UA896</strong> leaves <strong>Terminal 2 </strong>in <strong>2 hours 37 minutes</strong><br><br>
 
-            in <strong>2 HOURS 37 MINUTES.<br><br>
+            We estimate you will need<br>
+            <strong>14 minutes</strong> to check in
+            <strong>13 minutes</strong> to pass immigration
+            <strong>16 minutes</strong>to pass security at your gate<br><br>
+
+            Is there anything you need before boarding?<br><br>
+
+             <a href="/straightToFlight" >
+                <font color="#D3D3D3">No, take me straight to my flight.</font>
+            </a>
 
              <form>
               <input type="radio" id="eatdrink">
