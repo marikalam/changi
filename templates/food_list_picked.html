@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% include 'partials/flight-information.html'  %}
+{% include 'partials/flight-information-after.html'  %}
 
 <form action="demo_form.asp" method="get">
   <label class="control control--checkbox">
@@ -17,32 +17,33 @@
      </div>
     <div class="control__indicator"></div>
   </label>
-    <label class="control control--checkbox">
-      <input type="checkbox" id="t01" checked />
-      <div class="content">
-            <img src="../static/toilet.png" height="40" align="left">
-
-        <span><strong>Toilet</strong></span>
-              <span>2 min to destination</span>
-      <span>1 min wait in line</span>
-    <span>3 min total</span>
-      </div>
-      <div class="control__indicator"></div>
-    </label>
   <label class="control control--checkbox">
-    <input type="checkbox" id="s01" checked />
     <div class="content">
-          <img src="../static/mk.png" height="40" align="left">
-
-      <span><strong>Michael Kors</strong></span>
-      <span>Fashion &amp; Accessories</span>
-            <span>1 min to destination</span>
-       <span>1 min wait for checkout</span>
-    <span>2 min total</span>
+      <div class="logo-block">
+        <img src="../static/toilet.png" height="50" align="left">
+        <span><strong>Toilet</strong></span>
+      </div>
+      <span>2 min to destination</span>
+      <span>1 min wait in line</span>
+      <span><strong>3 min minimum</strong></span>
+    </div>
+    <div class="control__indicator"></div>
+  </label>
+  <label class="control control--checkbox">
+    <div class="content">
+      <div class="logo-block">
+        <img src="../static/mk.png" height="50" align="left">
+        <span><strong>Michael Kors</strong></span>
+        <span>Fashion &amp; Accessories</span>
+      </div>
+      <span>1 min to destination</span>
+      <span>1 min wait for checkout</span>
+      <span><strong>2 min minimum</strong></span>
     </div>
     <div class="control__indicator"></div>
   </label>
 </form>
+
 
 <video controls autoplay>
   <source src="../static/movie3.mp4" type="video/mp4">
@@ -50,6 +51,10 @@
 </video>
 
 {% include 'partials/download-changi-app.html'  %}
+
+<a href="/foodlist">
+  <button>Back</button>
+</a>
 
 <a href="/demo">
   <button class="yellow-button">IndoorAtlas Simulation</button>
