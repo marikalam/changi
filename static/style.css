@@ -6,9 +6,6 @@ body {
   height: 100%;
   font-color: #1F323A; }
 
-.content-title {
-  color: #6E367B; }
-
 .content-body span {
   color: #9D978F; }
 
@@ -40,8 +37,8 @@ img {
     font-size: 16px;
     margin-bottom: 8px; }
   .container form {
-    padding-top: 24px;
-    padding-bottom: 24px; }
+    margin-top: 24px;
+    margin-bottom: 24px; }
   .container input, .container textarea {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
@@ -72,6 +69,22 @@ img {
     @media (min-width: 402px) {
       .container form input[type=text] {
         max-width: 402px; } }
+  .container button {
+    height: 46px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 0px 22px;
+    cursor: pointer;
+    color: #726E69;
+    background-color: #EDEAE6; }
+    .container button:hover {
+      -webkit-transition: background-color .2s ease;
+      transition: background-color .2s ease;
+      background-color: #FDF7F1; }
+    .container button:active {
+      background-color: #D6D1CC; }
   .container .yellow-button {
     background-color: #FFD200;
     border-radius: 5px;
@@ -98,8 +111,16 @@ p, span, li {
   font-weight: 400;
   line-height: 1.5; }
 
+.food-list label {
+  background-color: #EDEAE6;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px 0px #1F323A, 0.12, 0px 2px 2px 0px #1F323A, 0.24;
+  padding: 16px; }
+  .food-list label:hover {
+    background-color: #D6D1CC; }
+
 a {
-  color: #D6D1CC;
+  color: #9D978F;
   font-weight: 400; }
   a:hover {
     color: #6E367B; }
@@ -116,7 +137,9 @@ li {
   color: #6E4B0E; }
 
 h1 {
-  font-size: 31.25px; }
+  margin-top: 36px;
+  font-size: 31.25px;
+  color: #6E367B; }
 
 h2 {
   font-size: 25px; }
