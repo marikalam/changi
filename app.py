@@ -41,6 +41,10 @@ def getFoodList():
 def getFoodListPicked():
     return render_template('food_list_picked.html')
 
+@app.route('/demo/', methods=['GET'])
+def getDemo():
+    return render_template('demo.html')
+
 
 # Run the app :)
 if __name__ == '__main__':
