@@ -285,9 +285,16 @@ span {
     font-size: $font-size-200;
 }
 
-.control-radio {
-    margin: 10px 0;
+.radio--options {
+    margin: 10px 0px;
     input {
         margin-right: 10px;
     }
+    label {
+        margin-right: 16px;
+    }
+}
+
+.dog {
+    color: red;
 }
